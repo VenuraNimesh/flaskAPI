@@ -10,6 +10,7 @@ import scipy
 import wave
 import io
 from denoisedPart import denoise_audio
+from denoise import denoiseFil
 import matplotlib.pyplot as plt
 from wave import Wave_write
 from werkzeug import secure_filename
@@ -37,7 +38,8 @@ def predict():
         
             noiseFilePath = app.config['UPLOAD_FOLDER'] + filename
             
-            denoise_audio(noiseFilePath)
+            #denoise_audio(noiseFilePath)
+            denoiseFil(noiseFilePath)
 
             os.remove(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             
@@ -47,4 +49,4 @@ def predict():
             return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 if __name__ == "__main__":   
-    app.run(host="0.0.0.0", port=5000)
+    app.run()
