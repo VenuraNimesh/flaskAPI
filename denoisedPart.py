@@ -9,7 +9,7 @@ from tensorflow.keras.models import load_model
 windowLength = 256
 ffTLength = windowLength
 overlap      = round(0.25 * windowLength)
-fs           = 16000
+fs           = 22050
 numSegments  = 8
 numFeatures  = ffTLength//2 + 1
 
