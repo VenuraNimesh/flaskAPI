@@ -38,8 +38,8 @@ def predict():
         
             noiseFilePath = app.config['UPLOAD_FOLDER'] + filename
             
-            #denoise_audio(noiseFilePath)
-            denoiseFil(noiseFilePath)
+            denoise_audio(noiseFilePath)
+            #denoiseFil(noiseFilePath)
 
             os.remove(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             
